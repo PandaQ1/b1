@@ -1,82 +1,110 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>WY</title>
-    <style>
-        body {
-            -webkit-font-smoothing: antialiased;
-            font-family: Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
-            background-image: url('https://raw.githubusercontent.com/we11cheng/we11cheng.github.io/master/bg.jpg');
-            font-size: 85%;
-            margin: 0;
-        }
-        
-        h2 {
-            font-size: 220%;
-            font-weight: 400;
-        }
-        
-        .content {
-            position: absolute;
-            width: 100%;
-            top: 40%;
-            transform: translate(0, -50%);
-            text-align: center;
-        }
-        
-        .timer {
-            font-size: 180%;
-            line-height: 1.5;
-            margin: 1em 0;
-        }
-        
-        .timer b {
-            color: rgb(253, 99, 125);
-        }
-    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>love line with Mr.斌</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
 </head>
 
 <body>
-    <div class="content">
-        <h2>耀哥，我们认识已经</h2>
-        <div class="timer">
-            <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
-        </div>
-    </div>
+<!-- <embed src="http://p3qhnc0eg.bkt.clouddn.com/U%20are%20so%20beautiful.mp3" width="0" height="0" loop="-1" autostart="true"> </embed> -->
+<embed src="http://other.web.ri01.sycdn.kuwo.cn/resource/n3/19/68/2405391895.mp3" width="0" height="0" loop="-1" autostart="true"> </embed>
 
-    <script>
-        function timer() {
-          var date1= '2013/05/01 00:0:00';  //开始时间
-          var date2 = new Date(); //结束时间
-          var t = date2.getTime() - new Date(date1).getTime();
-          var h = ~~(t / 1000 / 60 / 60 % 24);
-          if (h < 10) {
-            h = "0" + h;
-          }
-          var m = ~~(t / 1000 / 60 % 60);
-          if (m < 10) {
-            m = "0" + m;
-          }
-          var s = ~~(t / 1000 % 60);
-          if (s < 10) {
-            s = "0" + s;
-          }
-          document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
-          document.getElementById('h').innerHTML = h;
-          document.getElementById('m').innerHTML = m;
-          document.getElementById('s').innerHTML = s;
-        }
-        timer();
-        setInterval(timer, 1000);
-    </script>
-     
- </body>   
-</html>
-<div style="text-align:center;clear:both">
-<p>Made for 耀哥, Made by <a href="https://www.hx1s.com" target="_blank">HX<a /></p>
-<p>Copyright © 2018 - 2021. All Rights Reserved. Designed by <a href="https://www.hx1s.com" target="_blank">HX<a /> </p>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+        	我很努力的<br />
+            成为一个</span><br />
+            <span class="keyword">优秀的老婆</span><br /><br />
+
+            你也很努力的<br />
+            成为一个<br />
+            <span class="keyword">优秀的老公象</span><br /><br />
+
+            这种感觉<br />
+            真的是<br />
+             <span class="keyword">太好了</span><br /><br />
+
+            唯有梦想与你<br />
+            <span class="keyword">不可辜负</span><br /><br />
+
+             <hr />
+   			<span class="keyword">I want to say:</span><br />
+			Mr.斌<br />
+            <span class="keyword"> I love you! </span><br />
+            -- H<br />
+
+
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					在一起...
+					<div id="elapseClock"></div>
+				</div>
+<!--			<div id="loveu">
+					<br/>
+					<div class="signature">- 丽丽</div>
+				</div>
+-->
+			</div>
+		</div>
+	</div>
 </div>
+
+<script type="text/javascript">
+//心形区域的大小
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+
+together.setFullYear(2016,06,01); 
+together.setHours(12);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+    //异步形式加载动画
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+<div style="text-align:center;clear:both">
+<p>Made for 帅, Made by <a href="https://www.hx1s.com" target="_blank">Huang<a /></p>
+<p>Copyright © 2018 - 2021. All Rights Reserved. Designed by <a href="https://www.hx1s.com" target="_blank">Huang<a /> </p>
+</div>
+</body>
+</html>
